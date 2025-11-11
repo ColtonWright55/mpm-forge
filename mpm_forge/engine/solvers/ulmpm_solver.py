@@ -3,7 +3,6 @@ Simple warp implementation of the first explicit Updated Lagrangian Point Materi
 2.5 Algorithm 1.
 """
 
-import numpy as np
 import warp as wp
 
 # Grid properties
@@ -30,7 +29,7 @@ t_f = 1.0
 @wp.kernel
 def reset_grid():
     """
-    Iterate over all the grid nodes and reset their 
+    Iterate over all the grid nodes and reset their variables
     """
     # Get 2D grid index
     i, j = wp.tid()
@@ -38,6 +37,7 @@ def reset_grid():
     grid_mass[i, j] = 0.0
     grid_velo[i, j] = wp.vec2(0.0, 0.0)
     grid_force[i, j] = wp.vec2(0.0, 0.0)
+
 
 @wp.kernel
 def p2g():
