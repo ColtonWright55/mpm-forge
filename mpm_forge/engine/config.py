@@ -3,11 +3,11 @@ from dataclasses import dataclass
 
 @dataclass
 class SimConfig:
-    n_envs: int = 8
+    n_envs: int = 1
     dt: float = 1e-6
-    steps: int = 1000
-    n_particles: int = 10000
-    grid_res: tuple[int, int, int] = (64, 64, 4)
+    steps: int = 2
+    n_particles: int = 10
+    grid_res: tuple[int, int, int] = (4, 4, 2)
     use_sparse_grid: bool = False
 
     E: float = 1e4  # Young's modulus

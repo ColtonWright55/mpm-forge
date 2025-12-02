@@ -63,6 +63,7 @@ def p2g(
     mp = p_m[b, p]
     vol = p_vol[b, p]
     stress = p_stress[b, p]
+    print(xp)
 
     # Figure out what grid particle is in
     base_pos = xp * params.inv_dx - wp.vec3(1.0)
